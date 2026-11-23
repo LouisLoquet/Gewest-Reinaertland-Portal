@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+*.db
+.env*
+!.env.example
+*.json.secret
+*-key.json
+*service-account*.json
+*credentials*.json
+google-calendar-key.json

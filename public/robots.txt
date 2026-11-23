@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /beheer/
+Disallow: /api/
+Disallow: /login
+
+Sitemap: https://reinaertland.be/sitemap.xml
