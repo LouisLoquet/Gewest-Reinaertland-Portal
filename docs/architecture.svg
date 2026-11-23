@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="920" height="420" role="img" aria-label="Gewest Reinaertland System Architecture">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#f97316"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Card -->
+  <rect x="2" y="2" width="916" height="416" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Subtle Header -->
+  <text x="32" y="34" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="#fb923c">SYSTEM ARCHITECTURE</text>
+  <text x="32" y="56" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="17" font-weight="700" fill="#f8fafc">Gewest Reinaertland — Request, Caching &amp; Data Flow</text>
+  <line x1="32" y1="68" x2="888" y2="68" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Column 1: Client Browser -->
+  <g>
+    <rect x="32" y="158" width="188" height="114" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="32" y="158" width="188" height="4" rx="2" fill="#38bdf8"/>
+    <text x="126" y="191" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Client Browser</text>
+    <text x="126" y="213" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#94a3b8">Public Visitors &amp; Leaders</text>
+    <rect x="52" y="229" width="148" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="126" y="246" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#7dd3fc">HTTPS • HttpOnly Cookie</text>
+  </g>
+
+  <!-- Arrow 1: Client -> Cloudflare -->
+  <line x1="220" y1="215" x2="264" y2="215" stroke="#f97316" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="242" y="206" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#94a3b8">TLS 1.3</text>
+
+  <!-- Column 2: Cloudflare -->
+  <g>
+    <rect x="268" y="158" width="176" height="114" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="268" y="158" width="176" height="4" rx="2" fill="#f97316"/>
+    <text x="356" y="191" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Cloudflare Edge</text>
+    <text x="356" y="213" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#94a3b8">DNS Proxy • SSL Strict</text>
+    <rect x="288" y="229" width="136" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="356" y="246" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#fdba74">DDoS &amp; Cache Rules</text>
+  </g>
+
+  <!-- Arrow 2: Cloudflare -> Render -->
+  <line x1="444" y1="215" x2="488" y2="215" stroke="#f97316" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="466" y="206" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#94a3b8">Proxy</text>
+
+  <!-- Column 3: Render Monolith Container -->
+  <g>
+    <rect x="492" y="92" width="192" height="262" rx="14" fill="#172033" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="588" y="116" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#fb923c">Node.js + Express</text>
+    <text x="588" y="132" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10" fill="#94a3b8">Hosted on Render</text>
+
+    <!-- Sub-box A: SPA -->
+    <rect x="506" y="146" width="164" height="56" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="588" y="170" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Vite + React 19 SPA</text>
+    <text x="588" y="188" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10" fill="#94a3b8">dist/ • WebP • Immutable</text>
+
+    <!-- Sub-box B: REST API -->
+    <rect x="506" y="214" width="164" height="56" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="588" y="238" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">REST API (/api/*)</text>
+    <text x="588" y="256" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10" fill="#94a3b8">RBAC • CSRF • Rate Limit</text>
+
+    <!-- Sub-box C: Auth & Security -->
+    <rect x="506" y="282" width="164" height="56" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="588" y="306" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Auth &amp; Hardening</text>
+    <text x="588" y="324" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10" fill="#94a3b8">HS256 • tokenVersion • CSP</text>
+  </g>
+
+  <!-- Arrows: Render -> External Services -->
+  <path d="M 684 185 C 708 185, 706 130, 728 130" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="684" y1="223" x2="728" y2="223" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 684 260 C 708 260, 706 316, 728 316" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Column 4A: Turso / LibSQL -->
+  <g>
+    <rect x="732" y="94" width="156" height="72" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="732" y="94" width="156" height="4" rx="2" fill="#2dd4bf"/>
+    <text x="810" y="124" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">Turso / LibSQL</text>
+    <text x="810" y="145" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10.5" fill="#94a3b8">SQLite Edge Database</text>
+  </g>
+
+  <!-- Column 4B: Google Calendar -->
+  <g>
+    <rect x="732" y="187" width="156" height="72" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="732" y="187" width="156" height="4" rx="2" fill="#60a5fa"/>
+    <text x="810" y="217" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">Google Calendar</text>
+    <text x="810" y="238" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10.5" fill="#94a3b8">2-Way OAuth2 Sync</text>
+  </g>
+
+  <!-- Column 4C: SMTP -->
+  <g>
+    <rect x="732" y="280" width="156" height="72" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="732" y="280" width="156" height="4" rx="2" fill="#a78bfa"/>
+    <text x="810" y="310" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">SMTP Mailer</text>
+    <text x="810" y="331" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="10.5" fill="#94a3b8">Confirmations &amp; Alerts</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="32" y1="376" x2="888" y2="376" stroke="#1e293b" stroke-width="1"/>
+  <text x="460" y="399" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#64748b">Monolithic SPA + REST API  •  Browser WebP Optimization  •  Parameterized SQL  •  OWASP Hardened</text>
+</svg>
