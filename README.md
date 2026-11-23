@@ -45,15 +45,7 @@ The platform combines a fast, public-facing regional website with a role-based m
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    User["Visitor / Leader Browser"] --> CF["Cloudflare DNS, SSL & Edge"]
-    CF --> Server["Node.js + Express Monolith (Render)"]
-    Server --> SPA["Vite + React 19 SPA (dist/)"]
-    Server --> DB["Turso / LibSQL Database"]
-    Server --> GCal["Google Calendar API (OAuth2 Service Account)"]
-    Server --> SMTP["SMTP / Transactional Email (Nodemailer)"]
-```
+![System Architecture](./docs/architecture.svg)
 
 In development, Express attaches Vite in middleware mode for instant HMR. In production, Express serves the pre-built Vite bundle from `dist/` with tuned `Cache-Control` headers (`immutable` for hashed assets, `no-store` for API endpoints) alongside the `/api/*` REST backend.
 
